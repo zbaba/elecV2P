@@ -70,7 +70,7 @@ module.exports = app => {
       case "config":
         let data = req.body.data
         Object.assign(CONFIG, data)
-        if (data.efss.enable !== false) efssSet(CONFIG.efss)
+        if (data.efss && data.efss.enable !== false) efssSet(CONFIG.efss)
         if (CONFIG.CONFIG_FEED) CONFIG.CONFIG_FEED.homepage = CONFIG.homepage
         Object.assign(CONFIG_FEED, CONFIG.CONFIG_FEED)
         Object.assign(CONFIG_RUNJS, CONFIG.CONFIG_RUNJS)
@@ -122,6 +122,7 @@ module.exports = app => {
         break
       case "init":
         CONFIG.init = Object.assign(CONFIG.init || {}, req.body.data)
+        list.put('config.json', JSON.stringify(CONFIG, null, 2))
         res.end('add initialization runjs: ' + req.body.data.runjs)
         break
       default:{

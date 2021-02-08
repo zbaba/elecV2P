@@ -1,11 +1,7 @@
 // 一些常用函数，可在其他 JS 文件中使用 require 进行调用
 // 比如 const { wait } = require('utils.js'); wait(3).then(()=>console.log('done'))
 // 默认函数仅供参考，可随意删除或者添加自己常用的函数
-
-function now(){
-  const tzoffset = (new Date()).getTimezoneOffset() * 60000
-  return new Date(Date.now() - tzoffset).toISOString().slice(0, -1).replace('T', ' ')
-}
+// require 有缓存，本文件修改后，可能在其他引用脚本中并不会马上生效
 
 /**
  * 等待 s 秒，返回数据 data
@@ -28,6 +24,11 @@ function wait(s, show=false, data=null) {
       }
     }, 1000)
   })
+}
+
+function sTime(time, ms=false){
+  const tzoffset = (new Date()).getTimezoneOffset() * 60000
+  return new Date((time || Date.now()) - tzoffset).toISOString().slice(0, ms ? -1 : -5).replace('T', ' ')
 }
 
 function sType(obj) {
@@ -56,4 +57,4 @@ function sJson(str, force=false) {
   }
 }
 
-module.exports = { now, wait, sType, sJson }
+module.exports = { wait, sTime, sType, sJson }
