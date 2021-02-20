@@ -1,4 +1,19 @@
-<a href='https://github.com/elecV2/elecV2P' target='_blank'>elecV2P</a> 重要更新日志：(最新版本 v3.1.5)
+<a href='https://github.com/elecV2/elecV2P' target='_blank'>elecV2P</a> 重要更新日志：(最新版本 v3.2.0)
+
+v3.2.0
+ • EFSS 文件管理模块优化
+ • <a href='https://raw.githubusercontent.com/elecV2/elecV2P/master/script/JSFile/softupdate.js' target='_blank'>softupdate.js</a> bug fix
+
+v3.1.8
+ • Docker 环境下默认以 pm2 的方式启动 node
+ • 添加默认脚本 <a href='https://raw.githubusercontent.com/elecV2/elecV2P/master/script/JSFile/softupdate.js' target='_blank'>softupdate.js</a> , 用于软更新升级
+
+v3.1.7
+ • 增加通知主体内容最大长度的设置选项
+ • 增加在前端网页显示通知的选项
+
+v3.1.6
+ • 当通知主体内容长度超过 1200 时，自动分段发送
 
 v3.1.5
  • 优化 TASK 列表保存逻辑
@@ -12,7 +27,7 @@ v3.0.9
 
 v3.0.8
  • 通过脚本生成 UI 界面初版完成
- • 测试脚本：https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/examples/JSTEST/evui-dou.js
+ • 测试脚本：<a href='https://raw.githubusercontent.com/elecV2/elecV2P-dei/master/examples/JSTEST/evui-dou.js' target='_blank'>evui-dou.js</a>
 
 v3.0.3
  • 测试通过脚本生成 UI 界面的功能（$evui）
